@@ -1,9 +1,19 @@
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+// Không sử dụng font này
+// @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
 // Variables
 @import "variables";
 
-// Bootstrap
-@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// Bootstrap. Nạp Bootstrap. Không cần lệnh này
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Nạp font Awesome (file font-awesome.scss)
+@import "node_modules/font-awesome/scss/font-awesome";
+
+// Nạp Bulma framework (file bulma.sass)
+@import "node_modules/bulma/bulma";
+
+// Nạp Bulma Vue module (file buefy.scss)
+@import "node_modules/buefy/src/scss/buefy";

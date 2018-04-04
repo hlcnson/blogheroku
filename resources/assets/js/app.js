@@ -5,9 +5,18 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+//  Nạp file bootstrap.js, không phải Bootstrap framework
 require('./bootstrap');
 
+// Vue.js
 window.Vue = require('vue');
+
+// Nạp thư viện Buefy
+import Buefy from 'buefy';
+// CSS của Buefy sẽ được nạp trong file CSS của ứng dụng
+// import 'buefy/lib/buefy.css';
+Vue.use(Buefy);
+
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -15,8 +24,11 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+// Không sử dụng Vue component này
+// Vue.component('example', require('./components/Example.vue'));
 
-const app = new Vue({
-    el: '#app'
-});
+// Không sử dụng đối tượng Vue ở cấp độ ứng dụng này.
+// Sẽ tự tạo đối tượng Vue ở từng trang
+// const app = new Vue({
+//     el: '#app'
+// });

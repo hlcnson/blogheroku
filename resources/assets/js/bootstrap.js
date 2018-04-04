@@ -1,4 +1,5 @@
 
+// Nạp thư viện lodash với tên là dấu _
 window._ = require('lodash');
 
 /**
@@ -8,9 +9,11 @@ window._ = require('lodash');
  */
 
 try {
+    // Nạp Jquery, giữ lệnh này
     window.$ = window.jQuery = require('jquery');
 
-    require('bootstrap-sass');
+    // Nạp Bootstrap framework, không sử dụng lệnh này do không cần Bootstrap
+    // require('bootstrap-sass');
 } catch (e) {}
 
 /**
@@ -18,7 +21,7 @@ try {
  * to our Laravel back-end. This library automatically handles sending the
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
-
+// Nạp thư viện javasript Axios (tạp các http request đến server ứng dụng Laravel)
 window.axios = require('axios');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
