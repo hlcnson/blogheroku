@@ -3,6 +3,8 @@
 // Không sử dụng font này
 // @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
+// NẠP CÁC FILE THƯ VIỆN FRAMEWORK TRƯỚC
+
 // Variables
 @import "variables";
 
@@ -17,3 +19,11 @@
 
 // Nạp Bulma Vue module (file buefy.scss)
 @import "node_modules/buefy/src/scss/buefy";
+
+// NẠP CÁC FILE CSS CUSTOM SAU ĐỂ CÓ ĐỘ ƯU TIÊN CAO HƠN (có thể override css của framework)
+// Nạp file overrides.scss, chứa mã CSS để overrides thiết lập của framework
+@import "overrides";
+// Nạp file helpers.scss, chứa CSS để override các thiết lập về margin
+@import "helpers";
+// Nạp file styles.scss, chứa CSS tự định nghĩa
+@import "styles";

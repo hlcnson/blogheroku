@@ -15,8 +15,14 @@ window.Vue = require('vue');
 import Buefy from 'buefy';
 // CSS của Buefy sẽ được nạp trong file CSS của ứng dụng
 // import 'buefy/lib/buefy.css';
-Vue.use(Buefy);
+Vue.use(Buefy);     // Đây là một Vue Component, 
+                    // cần phải hoạt động bên trong một Vue Object
 
+// Tạo một đối tượng VueJS có phạm vi bên trong phần tử div có id là app
+var app = new Vue({
+    el: '#app',
+    data: {}
+});
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -32,3 +38,4 @@ Vue.use(Buefy);
 // const app = new Vue({
 //     el: '#app'
 // });
+

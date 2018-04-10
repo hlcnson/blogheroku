@@ -1,0 +1,50 @@
+
+.dropdown {
+	position: relative;
+	.dropdown-menu {
+		display: none;
+		position: absolute;
+		// Hiển thị sát biên trái của container
+		left: 0;
+		// Hiển thị ngay cạnh đáy của container, rời xa 2% độ rộng phần tử chứa
+		top: 105%;
+		// Giữ cho menu hiển thị trên tất cả các phần tử khácombak
+		z-index: 1000;
+		background-color: white;
+		// Đặt độ rộng tối thiểu để menu có thể tự tăng độ rộng vừa với nội dung
+		min-width: 200px;
+		text-align: left;
+		box-shadow: 0 0 1px rgba(57, 70, 78, 0.15), 0 20px 55px -8px rgba(57,70, 78, 0.25);
+		
+		li {
+			&.seperator { 
+				border-top: 1px solid #ccc;
+				margin: 5px 0;
+			}
+			&>a {
+				margin: 7px 5px;
+				display: block;		// Chiếm trọn độ rộng của phần tử chứa
+				padding: 0 10px;
+				&:hover {
+					background-color: whitesmoke;
+				}
+			}
+		}
+	}
+
+	// Đặt rule này ở đây để có độ ưu tiên cao hơn.
+	// Ký hiệu & giúp tổ hợp parent selector và child director liên tục với nhau,
+	// dạng: .parent_selector.child_selector
+	&.is-aligned-right .dropdown-menu {			
+		// Được biên dịch thành .dropdown.is-aligned-right .dropdown-menu
+		right: 0;
+		// Xóa thiết lập căn lề trái của parent selector
+		left: auto;
+	}
+
+	// Được biên dịch thành .dropdown.is-open .dropdown-menu
+	&.is-open .dropdown-menu {
+		// Xóa thiết lập display của parent selector
+		display: block;
+	}
+}
