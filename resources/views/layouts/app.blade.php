@@ -46,20 +46,28 @@
 					<!-- Sử dụng cú pháp blade của Laravel -->
 					@if (!Auth::guest())
 						{{-- user chưa đăng nhập --}}
-						<a href="#" class="nav-item is-tab">Login</a>
-						<a href="#" class="nav-item is-tab">Join the Community</a>
+						<a href="{{route('login')}}" class="nav-item is-tab">Login</a>
+						<a href="{{route('register')}}" class="nav-item is-tab">Join the Community</a>
 					@else
 						{{-- User đã đăng nhập. Tạo dropdown.
 						Customize class: is-aligned-right, dropdown-menu --}}
-						<button class="dropdown nav-item is-open is-tab is-aligned-right">
+						<button class="dropdown nav-item is-tab is-aligned-right">
 							Hey Alex <span class="icon"><i class="fa fa-caret-down"></i></span>
 							{{-- Dropdown menu ở đây --}}
 							<ul class="dropdown-menu">
-								<li><a href="#">Profile</a></li>
-								<li><a href="#">Notifications</a></li>
-								<li><a href="#">Settings</a></li>
+								<li>
+									<a href="#"><span class="icon"><i class="fa fa-fw m-r-10 fa-user-circle-o"></i></span> Profile</a>
+								</li>
+								<li>
+									<a href="#"><span class="icon"><i class="fa fa-fw m-r-10 fa-bell"></i></span>Notifications</a>
+								</li>
+								<li>
+									<a href="#"><span class="icon"><i class="fa fa-fw m-r-10 fa-cog"></i></span>Settings</a>
+								</li>
 								<li class="seperator"></li>
-								<li><a href="#">Log out</a></li>
+								<li>
+									<a href="#"><span class="icon"><i class="fa fa-fw m-r-10 fa-sign-out"></i></span>Log out</a>
+								</li>
 							</ul>
 						</button>
 					@endif

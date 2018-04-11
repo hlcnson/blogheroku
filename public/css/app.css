@@ -3175,7 +3175,7 @@ th {
 }
 
 html {
-  background-color: #fff;
+  background-color: whitesmoke;
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -12626,6 +12626,14 @@ label.panel-block:hover {
   transition: opacity 86ms ease-out, visibility 86ms ease-out;
 }
 
+.is-muted {
+  color: #b5b5b5 !important;
+}
+
+.is-muted:hover {
+  color: #7a7a7a !important;
+}
+
 .dropdown {
   position: relative;
 }
@@ -12665,6 +12673,52 @@ label.panel-block:hover {
 
 .dropdown.is-open .dropdown-menu {
   display: block;
+}
+
+button.nav-item {
+  background-color: #fff;
+  border: none;
+  color: #7a7a7a;
+}
+
+button.nav-item:hover {
+  color: #363636;
+}
+
+button.nav-item.is-active {
+  color: #363636;
+}
+
+button.nav-item.is-tab {
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  padding-bottom: calc(0.75rem - 1px);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: calc(0.75rem - 1px);
+}
+
+button.nav-item.is-tab:hover {
+  border-bottom-color: #00d1b2;
+  border-top-color: transparent;
+}
+
+button.nav-item.is-tab.is-active {
+  border-bottom: 3px solid #00d1b2;
+  color: #00d1b2;
+  padding-bottom: calc(0.75rem - 3px);
+}
+
+button.nav-item.is-tab.is-brand {
+  padding-left: 0;
+}
+
+.nav {
+  height: 4rem;
+}
+
+.nav-item img {
+  max-height: 2.8rem;
 }
 
 /*

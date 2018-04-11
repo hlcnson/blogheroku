@@ -1,4 +1,17 @@
 
+// DÀNH CHO TEXT
+// Các biến $grey-light, $grey là biến của Bulma SASS
+.is-muted {
+	color: $grey-light !important;
+}
+
+.is-muted:hover {
+	color: $grey !important;
+}
+
+
+
+// DÀNH CHO MENU DROPDOWN
 .dropdown {
 	position: relative;
 	.dropdown-menu {
@@ -47,4 +60,48 @@
 		// Xóa thiết lập display của parent selector
 		display: block;
 	}
+}
+
+// Sao chép của Bulma
+button.nav-item {
+	background-color: #fff;
+	border: none;
+	color: $text-light;
+
+	&:hover {
+		color: $link-hover;
+	}
+	// Modifiers
+	&.is-active {
+		color: $link-active;
+	}
+	&.is-tab {
+		border-bottom: 1px solid transparent;
+		border-top: 1px solid transparent;
+		padding-bottom: calc(0.75rem - 1px);
+		padding-left: 1rem;
+		padding-right: 1rem;
+		padding-top: calc(0.75rem - 1px);
+		&:hover {
+			border-bottom-color: $primary;
+			border-top-color: transparent ;
+		}
+		&.is-active {
+			border-bottom: 3px solid $primary;
+			color: $primary;
+			padding-bottom: calc(0.75rem - 3px);
+		}
+		// Responsiveness
+		&.is-brand {
+			padding-left: 0;
+		}
+	}
+}
+
+.nav {
+	height: 4rem;
+}
+
+.nav-item img {
+	max-height: 2.8rem;
 }

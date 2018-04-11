@@ -996,8 +996,8 @@ Vue.use(__WEBPACK_IMPORTED_MODULE_0_buefy___default.a); // Đây là một Vue C
 
 // Tạo một đối tượng VueJS có phạm vi bên trong phần tử div có id là app
 var app = new Vue({
-  el: '#app',
-  data: {}
+    el: '#app',
+    data: {}
 });
 
 /**
@@ -1014,6 +1014,16 @@ var app = new Vue({
 // const app = new Vue({
 //     el: '#app'
 // });
+
+// Code để hiển thị menu, sử dụng JQuery
+$(document).ready(function () {
+    // Khi mouse di chuyển trên nút menu, sự kiện hover xảy ra khi mouse đi
+    // vào và đi ra khỏi nút lệnh
+    $('button.dropdown').hover(function (e) {
+        // Thêm/xóa class tên is-open cho nút menu
+        $(this).toggleClass('is-open');
+    });
+});
 
 /***/ }),
 /* 11 */

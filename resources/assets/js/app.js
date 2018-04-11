@@ -39,3 +39,12 @@ var app = new Vue({
 //     el: '#app'
 // });
 
+// Code để hiển thị menu, sử dụng JQuery
+$(document).ready(function(){
+    // Khi mouse di chuyển trên nút menu, sự kiện hover xảy ra khi mouse đi
+    // vào và đi ra khỏi nút lệnh
+    $('button.dropdown').hover(function(e){
+        // Thêm/xóa class tên is-open cho nút menu
+        $(this).toggleClass('is-open');
+    });
+});
