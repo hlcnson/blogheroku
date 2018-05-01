@@ -17,6 +17,9 @@
 // Nạp Bulma framework (file bulma.sass)
 @import "node_modules/bulma/bulma";
 
+// Nạp Material Design Icon framework (file materialdesignicons.sass)
+@import "node_modules/@mdi/font/scss/materialdesignicons";
+
 // Nạp Bulma Vue module (file buefy.scss)
 @import "node_modules/buefy/src/scss/buefy";
 
@@ -25,5 +28,8 @@
 @import "overrides";
 // Nạp file helpers.scss, chứa CSS để override các thiết lập về margin
 @import "helpers";
+// Nạp file manage.scss
+@import "manage.scss";
 // Nạp file styles.scss, chứa CSS tự định nghĩa
 @import "styles";
+

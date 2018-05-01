@@ -1,0 +1,132 @@
+// SASS cho giao diện backend (file views/layouts/manage.blade.php)
+
+
+// Định dạng phần tử aside (menu trái)
+#admin-side-menu {
+    // Định dạng ở phần này dành cho mobile
+    position: fixed;    
+    top: 3rem;
+    bottom: 0;
+    width: 200px;
+    background-color: white;
+    // Tạo hiệu ứng menu trượt vào (ẩn menu)
+    transition: left 0.4s ease-in-out;
+    left: -200px;  // Ẩn đi menu trái trên màn hình mobile
+    z-index: 100;
+    // Nếu nội dung menu vượt quá chiều cao màn hình, cho phép cuộn
+    // overflow-y: auto; 
+    &.is-active { // Khi có thêm class is-active, tức menu được kích hoạt
+        // Tạo hiệu ứng menu trượt ra
+        transition: left 0.4s ease-in-out;
+        left: 0;
+    }
+
+    // @media only screen and (min-width: 1024px) {
+    // Cách viết tương đương và dễ đọc hơn, sử dụng mixin của Bulma
+    @include desktop {    // Phần này cho desktop
+        left: 0;  // Menu xuất hiện trên màn hình desktop
+    }
+}
+
+#admin-slideout-button {
+    // Tạo hiệu ứng xoay nút lệnh về vị trí menu ẩn
+    transition: 0.4s;
+    &.is-open {
+        // Tạo hiệu ứng xoay nút lệnh về vị trí menu hiện
+        transition: 0.4s;
+        transform: rotateY(180deg);  // Xoay biểu tượng mũi tên 180 độ
+    }
+}
+
+// Khu vực hiển thị trang con
+.management-area {
+    top: 4rem;
+    right: 0;
+
+    @include desktop {
+        position: absolute;
+        left: 200px;
+    }
+
+}
+
+.flex-container {
+    margin: 10px 25px;
+}
+
+.submenu {
+    max-height: 0;
+    overflow: hidden; // Phần nội dung vượt quá khung chứa sẽ bị ẩn
+    // Tạo hiệu ứng transtion cho mọi thuộc tính
+    transition: all 0.2s ease-in-out;
+}
+
+.menu-list li ul {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.title.is-admin {
+    font-weight: 300;
+}
+  
+.widget-area {
+    min-height: 75px;
+    padding: 10px;
+    border-bottom: 1px solid rgba(10, 10, 10, 0.1);
+
+    &.author-widget {
+        .selected-author {
+            display: flex;
+            align-content: flex-start;
+            img {
+                border-radius: 25px;
+            }
+            .author {
+                margin: auto 0 auto 10px;
+                .subtitle {
+                font-weight: 300;
+                font-size: 0.8em;
+                }
+            }
+        }
+    }
+
+    &.post-status-widget {
+        .status {
+        display: flex;
+        align-content: flex-start;
+        .status-icon {
+            min-width: 50px;
+            .icon {
+            width: 100%;
+            i {
+                text-align: center;
+            }
+            }
+        }
+        .status-details {
+            margin-left: 10px;
+            h4 {
+            font-weight: 400;
+            span.status-emphasis {
+                font-weight: 800;
+            }
+            }
+            p {
+            font-weight: 300;
+            font-size: 0.8em;
+            }
+        }
+        }
+    }
+    &.publish-buttons-widget {
+        display: flex;
+        min-height: 50px;
+
+        .primary-action-button, .secondary-action-button {
+        flex: 1;
+        margin: 0 5px;
+        }
+    }
+}

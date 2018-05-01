@@ -34,7 +34,7 @@
                     </div>
                     
                     
-                    <button class="button is-primary is-outlined is-fullwidth m-t-30">Get Reset Link</button> 
+                    <button class="button is-success is-outlined is-fullwidth m-t-30">Get Reset Link</button> 
                 </form> 
             </div> 
         </div>   {{-- end card --}}

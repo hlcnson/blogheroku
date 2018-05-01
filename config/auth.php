@@ -42,7 +42,7 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
+            'driver' => 'token',    // Sử dụng phương thức authentication dựa trên token_api
             'provider' => 'users',
         ],
     ],

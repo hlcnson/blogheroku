@@ -8,13 +8,13 @@ window._ = require('lodash');
  * code may be modified to fit the specific needs of your application.
  */
 
-try {
-    // Nạp Jquery, giữ lệnh này
-    window.$ = window.jQuery = require('jquery');
+// try {
+//     // Nạp Jquery, giữ lệnh này
+//     window.$ = window.jQuery = require('jquery');
 
-    // Nạp Bootstrap framework, không sử dụng lệnh này do không cần Bootstrap
-    // require('bootstrap-sass');
-} catch (e) {}
+//     // Nạp Bootstrap framework, không sử dụng lệnh này do không cần Bootstrap
+//     // require('bootstrap-sass');
+// } catch (e) {}
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests

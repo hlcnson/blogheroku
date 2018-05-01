@@ -8,77 +8,28 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    {{-- config là global helper function để lấy thông tin cấu hình trong .env
+    theo khóa, nếu khóa không tồn tại, lấy giá trị mặc định ở đối số thứ hai. --}}
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+	{{-- Kết xuất mã nguồn riêng của trang con, nếu không có thì bỏ qua --}}
+	@yield('styles')
 </head>
 <body>
+	{{-- Nhúng mã của khu vực navigation (_includes/nav/main.blade.php) vào đây. --}}
+	@include('_includes.nav.main')
     <!-- Phần tử div này xác định phạm vi của đối tượng Vue (/resources/assets/js/app.js).
     Có thể sử dụng Vue component trong đây -->
     <div id="app">
-		{{-- Các class sử dụng ở đây đều là Bulma class. Customize class sẽ được ghi chú. --}}
-		<nav class="nav has-shadow">
-			<!-- Tạo container để canh lề trung tâm cho các phần tử bên trong -->
-			<div class="container">
-				<div class="nav-left">
-					<!-- Hàm route kết xuất route đến trang home.
-				 	Hàm asset tham chiếu đến url của thư mục /public-->
-					<!-- Logo -->
-					<a class="nav-item" href="{{route('home')}}">
-						<img src="{{asset('images/devmarketer-logo.png')}}" alt="Logo here">
-					</a>
-					<!-- Menu trái -->
-					<!-- is-tab: gạch chân
-				 	is-hidden-mobile: menu ẩn đi trên màn hình mobile
-					m-l-10: margin left 10px-->
-					<a class="nav-item is-tab is-hidden-mobile m-l-10" href="#">
-						Learn
-					</a>
-					<a class="nav-item is-tab is-hidden-mobile" href="#">
-						Discuss
-					</a>
-					<a class="nav-item is-tab is-hidden-mobile" href="#">
-						Share
-					</a>
-				</div>
-				<div class="nav-right" style="overflow:visible;">
-					<!-- Sử dụng cú pháp blade của Laravel -->
-					@if (!Auth::guest())
-						{{-- user chưa đăng nhập --}}
-						<a href="{{route('login')}}" class="nav-item is-tab">Login</a>
-						<a href="{{route('register')}}" class="nav-item is-tab">Join the Community</a>
-					@else
-						{{-- User đã đăng nhập. Tạo dropdown.
-						Customize class: is-aligned-right, dropdown-menu --}}
-						<button class="dropdown nav-item is-tab is-aligned-right">
-							Hey Alex <span class="icon"><i class="fa fa-caret-down"></i></span>
-							{{-- Dropdown menu ở đây --}}
-							<ul class="dropdown-menu">
-								<li>
-									<a href="#"><span class="icon"><i class="fa fa-fw m-r-10 fa-user-circle-o"></i></span> Profile</a>
-								</li>
-								<li>
-									<a href="#"><span class="icon"><i class="fa fa-fw m-r-10 fa-bell"></i></span>Notifications</a>
-								</li>
-								<li>
-									<a href="#"><span class="icon"><i class="fa fa-fw m-r-10 fa-cog"></i></span>Settings</a>
-								</li>
-								<li class="seperator"></li>
-								<li>
-									<a href="#"><span class="icon"><i class="fa fa-fw m-r-10 fa-sign-out"></i></span>Log out</a>
-								</li>
-							</ul>
-						</button>
-					@endif
-				</div>
-			</div>
-		</nav>
-		<!-- Vue object hoạt động cả trong content được nhúng ở đây -->
+		{{-- Kết xuất mã nguồn của trang con. Vue object hoạt động cả trong content được nhúng ở đây --}}
         @yield('content')
     </div>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <!-- Scripts của toàn ứng dụng -->
+	<script src="{{ asset('js/app.js') }}"></script>
+	{{-- Kết xuất thêm script của trang con, nếu có. --}}
+	@yield('scripts')
 </body>
 </html>

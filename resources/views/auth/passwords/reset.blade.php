@@ -30,7 +30,7 @@
                         </p>
                         {{-- Hiển thị thông điệp báo có lỗi --}}
                         @if ($errors->has('email'))
-                            <p class="help is-danger">{{$errors->first('email')}}</p>
+                            <p class="help is-success">{{$errors->first('email')}}</p>
                         @endif
                     </div>
                     <div class="columns">
